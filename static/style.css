@@ -143,7 +143,7 @@ main .profile ul li:hover {
     color: var(--white);
 }
 
-main .profile ul .interval-active{
+main .profile ul .interval-active {
     color: white;
 }
 
@@ -165,12 +165,12 @@ main .activies-section ul li {
     border-radius: var(--border-radius-default) var(--border-radius-default) calc(var(--border-radius-default) + 0.5rem) calc(var(--border-radius-default) + 0.5rem);
     display: grid;
     width: 100%;
+    background-size: 3rem;
 }
 
 main>.activies-section>ul>li:nth-child(1) {
     background-image: url(../images/icon-work.svg);
     background-repeat: no-repeat;
-    background-size: 3rem;
     background-position: top -8px right 12px;
     background-color: var(--light-orange);
 }
@@ -178,7 +178,6 @@ main>.activies-section>ul>li:nth-child(1) {
 main>.activies-section>ul>li:nth-child(2) {
     background-image: url(../images/icon-play.svg);
     background-repeat: no-repeat;
-    background-size: 3rem;
     background-position: top -4px right 12px;
     background-color: var(--soft-blue);
 }
@@ -186,7 +185,6 @@ main>.activies-section>ul>li:nth-child(2) {
 main>.activies-section>ul>li:nth-child(3) {
     background-image: url(../images/icon-study.svg);
     background-repeat: no-repeat;
-    background-size: 3rem;
     background-position: top -5px right 12px;
     background-color: var(--light-red);
 }
@@ -194,7 +192,6 @@ main>.activies-section>ul>li:nth-child(3) {
 main>.activies-section>ul>li:nth-child(4) {
     background-image: url(../images/icon-exercise.svg);
     background-repeat: no-repeat;
-    background-size: 3rem;
     background-position: top 0px right 12px;
     background-color: var(--lime-green);
 }
@@ -202,7 +199,6 @@ main>.activies-section>ul>li:nth-child(4) {
 main>.activies-section>ul>li:nth-child(5) {
     background-image: url(../images/icon-social.svg);
     background-repeat: no-repeat;
-    background-size: 3rem;
     background-position: top -9px right 12px;
     background-color: var(--violet);
 }
@@ -210,7 +206,6 @@ main>.activies-section>ul>li:nth-child(5) {
 main>.activies-section>ul>li:nth-child(6) {
     background-image: url(../images/icon-self-care.svg);
     background-repeat: no-repeat;
-    background-size: 3rem;
     background-position: top -8px right 12px;
     background-color: var(--soft-orange);
 }
@@ -350,4 +345,122 @@ header details .menu-detail .menu-itens {
 main>.activies-section>ul>li:nth-child(n) .menu-detail {
     position: absolute;
     right: -3.5rem;
+}
+
+
+
+@media (max-width: 490px) {
+
+    :root {
+        --padding-default: 1.5rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        padding: var(--padding-default);
+        overflow-y: auto;
+    }
+
+    main .profile {
+        & section {
+            flex-direction: row;
+            gap: 1rem;
+            padding: 1.75rem;
+            padding-block: 2rem;
+            align-items: center;
+            justify-content: flex-start;
+
+            & figure {
+                height: 4rem;
+                width: 4rem;
+            }
+
+            & article {
+                gap: 0.5rem;
+
+                & span {
+                    font-weight: var(--font-weight-light);
+                    font-size: 0.8rem;
+                    color: var(--pale-blue-less);
+                }
+
+                & h2 {
+                    font-weight: var(--font-weight-light);
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        & ul {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+
+    main .activies-section {
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+
+            & li {
+                height: 9.5rem;
+
+                background-size: 4rem;
+
+                & article {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    grid-template-rows: repeat(2, max-content);
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                    padding-inline: 1.5rem;
+                    padding-block: 1rem;
+                    height: 80%;
+                    width: 100%;
+                    gap: 0;
+
+                    & header {
+                        align-items: center;
+                        justify-content: space-between;
+                        grid-column: 1 / -1;
+                        grid-row: 1;
+                        margin-bottom: 0;
+                    }
+
+                    & h1 {
+                        grid-column: 1;
+                        grid-row: 2;
+                        font-size: 1.75rem;
+                    }
+
+                    & footer {
+                        grid-column: 2 / 3;
+                        grid-row: 2;
+                        max-width: max-content;
+                        justify-self: self-end;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    main>.activies-section>ul>li:nth-child(n) .menu-detail {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        right: 0rem;
+        width: max-content;
+        height: max-content;
+
+        & .menu-itens {
+            height: max-content;
+        }
+    }
 }
